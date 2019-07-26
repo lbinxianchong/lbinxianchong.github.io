@@ -5,7 +5,7 @@
 # Site
 title: lbin@Refuge
 subtitle:
-description: 
+description: Ctrl+C Ctrl+V
 keywords:
 author: lbin
 language: zh-CN
@@ -73,11 +73,21 @@ pagination_dir: page
 # Extensions
 ## Plugins: https://hexo.io/plugins/
 ## Themes: https://hexo.io/themes/
-theme: hueman
+theme: mellow
 
 # Deployment
 ## Docs: https://hexo.io/docs/deployment.html
 deploy:
   type: git
-  repo: git@github.com:lbinxianchong/lbinxianchong.github.io
+  repo:
+    github: git@github.com:lbinxianchong/lbinxianchong.github.io
+    # coding: 
   branch: master
+
+backup:
+  type: git
+  message: backup my blog of https://lbinxianchong.github.io
+  repository:
+    # 你的github仓库地址,备份分支名  （建议新建backup分支）
+    github: https://github.com/lbinxianchong/lbinxianchong.github.io.git,backup
+    # coding: 

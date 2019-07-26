@@ -1,37 +1,46 @@
 # site name
-site_name: 说IT
-short_name: 说
+# 站点名
+site_name: LB的避难所
+short_name: Refuge
 
 # Master info. It won't work if the one from (author|authorLink|avatar|authorDesc) be written in post.md
+# 主信息。如果来自（author authorlink avatar authordesc）的邮件被写在post.md中，它将不起作用。
 webmaster:
-  name: 纠结伦
-  avatar: /images/favicon.png
-  home: https://shuoit.net
-  desc: 一个搬🧱的劳斯基😁️️
+  name: admin
+  avatar: D:/note/blog/lbinxianchong.github.io/themes/jsimple/source\images/favicon.png
+  home: 
+  desc: 测试
 
 # CSP Mode, true means #Content-Security-Policy = upgrade-insecure-requests# in meat tag
+# CSP模式，真意味着内容安全策略=升级肉类标签中的不安全请求
 csp_enable: false
 
 # Read Mode. day or night
+# 读取模式。白天还是晚上
 read_mode: day
 
 # favicon
-favicon: /images/favicon.png
+# 站点的favicon和头像 输入图片路径（下面的配置是都是cdn的相对路径，没有cdn请填写完整路径，建议使用jsdeliver搭建一个cdn啦，先去下载我的cdn替换下图片就行了，简单方便~）
+favicon: D:/note/blog/lbinxianchong.github.io/themes/jsimple/source\images/favicon.png
 # unique avatar
 avatar_show: false
-avatar_image: /images/favicon.png
+#avatar_image: /images/favicon.png
+avatar_image: D:/note/blog/lbinxianchong.github.io/themes/jsimple/source\images/favicon.png
 
 # Home page sort type: -1: newer first，1: older first.
+# 主页排序类型：-1:新的先，1 老的先。
 home_page_sort: -1
 # Home page article shown number
+# 首页文章显示编号
 home_article_shown: 10
 
 # Post sticky top support (you need to set top:number in post.md. )
+# 贴粘顶支撑（您需要设置顶部：post.md中的数字）。
 sticky_top:
   enable: true
 
 # your site build time or domain buy time
-site_building_time: 01/20/2018
+site_building_time: 07/20/2019
 
 # Top navigate menu name
 ## Notice:
@@ -50,17 +59,15 @@ left_nav_menus:
 
 
 # cover info config
-cover_title: 用代码摇滚这个世界
-cover_description: 一个关注技术与人文的IT博客
+cover_title: 一个程序员的避难所
+cover_description: 关于成长的记载
 
 # sns url
 sns:
-  telegram: http://t.me/kunyintang
-  instagram: https://www.instagram.com/mtangsir/
-  twitter: https://twitter.com/tangkunyin
   github: https://github.com/tangkunyin
 
 # article declare. default content in languages
+# 物品申报。默认语言内容
 post_declare: true
 
 # Local search
@@ -68,13 +75,14 @@ post_declare: true
 local_search:
   # if auto, trigger search by changing input
   # if manual, trigger search by pressing enter key or search button
-  trigger: auto
+  trigger: manual
   # show top n results per article, show all results by setting to -1
   top_n_per_article: 1
   # unescape html strings to the readable one
   unescape: false
 
 ## Analytics setting. Google default
+# 分析设置。谷歌默认
 analytics:
   enable: false
   google_analytics_id:
@@ -117,7 +125,8 @@ server_name:
 server_url:
 
 mathjax:
-   enable: true
+   enable: false
+#   enable: true
 
 ## Baidu ziyuan auto-commit. see https://ziyuan.baidu.com/
    baidu_auto_push: false
