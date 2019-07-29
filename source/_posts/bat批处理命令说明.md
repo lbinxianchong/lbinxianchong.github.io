@@ -1,7 +1,9 @@
 ---
 title: bat批处理命令说明
 date: 2019-07-26 16:05:53
-tags: bat，批处理
+tags: 
+    - bat
+    - 批处理
 categories: #分类(分层)
     - 技术
     - 批处理

@@ -1,7 +1,9 @@
 ---
 title: 自动执行样版bat
 date: 2019-07-26 16:13:06
-tags: bat，批处理
+tags: 
+    - bat
+    - 批处理
 categories: #分类(分层)
     - 技术
     - 批处理
