@@ -1,10 +1,38 @@
 ---
 title: 自动执行样版bat
 date: 2019-07-26 16:13:06
-tags:
+tags: bat
 ---
 
-该文档是自动执行样本
+打开执行
+
+```
+@echo off
+::路径设置
+set ideapath=D:\Program Files\JetBrains\IntelliJ IDEA 2017.3.2\bin\
+set vnotepath=D:\Program Files (x86)\VNote\
+::执行程序
+start /d "%vnotepath%" VNote.exe
+start /d "%ideapath%" idea64.exe
+echo 该脚本编码用的是GBK，及时更新
+pause
+```
+
+hexo编译
+
+```
+@echo off
+title 更新hexo-本地部署
+echo ###################hexoblog更新#################
+CMD /C hexo clean
+CMD /C hexo g
+
+echo 该脚本编码用的是GBK，及时更新
+
+pause
+```
+
+一键git更新github
 
 ```
 @echo off
@@ -13,9 +41,9 @@ title 更新git推送github
 echo 脚本开始于%date%%time%
 
 ::路径设置
-set vnotepath=D:\git-repository\vnote-log
-set hexoblogpath=D:\note\blog\hexoblog
-set githubpath=D:\note\blog\lbinxianchong.github.io
+set vnotepath=x:\xx\x
+set hexoblogpath=x:\xx\x
+set githubpath=x:\xx\x
 
 echo ###################vnote笔记更新#################
 ::更新笔记 vnote-log master
