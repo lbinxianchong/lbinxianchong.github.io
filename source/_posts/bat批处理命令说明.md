@@ -1,7 +1,15 @@
 ---
 title: bat批处理命令说明
 date: 2019-07-26 16:05:53
-tags: bat
+tags: bat，批处理
+categories: #分类(分层)
+    - 技术
+    - 批处理
+reward: false #是否开启打赏功能
+comment: false #是否开启评论功能
+#top: 1 #置顶层级(数字越大，优先级越高)
+#repo: codefine | hexo-theme-mellow #用户名 | 仓库名
+src: /img/as/1.jpg #主页摘要缩略图(外链以及相对资源均可)
 ---
 
 #### 格式

@@ -101,7 +101,7 @@ menu:
     #url: /about
     #icon: user
   demo:
-    text: CUSTOM
+    text: 待开发
     url: /custom
     icon: plus-square
   #github:
