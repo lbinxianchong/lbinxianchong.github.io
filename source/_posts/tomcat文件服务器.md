@@ -18,11 +18,11 @@ src: /img/a.jpg #主页摘要缩略图(外链以及相对资源均可)
 
 ### 第一种：项目在idea的tomcat部署
 
-![1565602055313](D:\git-repository\vnote-log\Vbijian\学习日记\其他\tomcat文件服务器.assets\1565602055313.png)
+![1565602055313](tomcat文件服务器.assets\1565602055313.png)
 
-![1565602117231](D:\git-repository\vnote-log\Vbijian\学习日记\其他\tomcat文件服务器.assets\1565602117231.png)
+![1565602117231](tomcat文件服务器.assets\1565602117231.png)
 
-![1565602192580](D:\git-repository\vnote-log\Vbijian\学习日记\其他\tomcat文件服务器.assets\1565602192580.png)
+![1565602192580](tomcat文件服务器.assets\1565602192580.png)
 
 访问：http://127.0.0.1:8080/docsave
 
