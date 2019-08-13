@@ -11,18 +11,18 @@ reward: false #是否开启打赏功能
 comment: false #是否开启评论功能
 #top: 1 #置顶层级(数字越大，优先级越高)
 #repo: codefine | hexo-theme-mellow #用户名 | 仓库名
-src: /img/a.jpg #主页摘要缩略图(外链以及相对资源均可)
+#src: /img/a.jpg #主页摘要缩略图(外链以及相对资源均可)
 ---
 
 由于tomcat部署与idea部署分为单独的服务器，分为2种情况部署
 
 ### 第一种：项目在idea的tomcat部署
 
-![1565602055313](tomcat文件服务器.assets\1565602055313.png)
+![1565602055313](/img/tomcat文件服务器.assets/1565602055313.png)
 
-![1565602117231](tomcat文件服务器.assets\1565602117231.png)
+![1565602117231](/img/tomcat文件服务器.assets/1565602117231.png)
 
-![1565602192580](tomcat文件服务器.assets\1565602192580.png)
+![1565602192580](/img/tomcat文件服务器.assets/1565602192580.png)
 
 访问：http://127.0.0.1:8080/docsave
 
