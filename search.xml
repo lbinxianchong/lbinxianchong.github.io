@@ -1,0 +1,470 @@
+<?xml version="1.0" encoding="utf-8"?>
+<search> 
+  
+    
+    <entry>
+      <title><![CDATA[Ubuntu配置设置]]></title>
+      <url>/2020/06/12/Ubuntu%E8%AE%BE%E7%BD%AE/</url>
+      <content type="html"><![CDATA[<h1 id="1-dockor篇"><a href="#1-dockor篇" class="headerlink" title="1.dockor篇"></a>1.dockor篇</h1><h4 id="卸载老版本"><a href="#卸载老版本" class="headerlink" title="卸载老版本"></a>卸载老版本</h4><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ sudo apt-get remove docker docker-engine docker.io</span><br></pre></td></tr></table></figure>
+
+<h4 id="更新apt包索引"><a href="#更新apt包索引" class="headerlink" title="更新apt包索引"></a>更新apt包索引</h4><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get update</span><br></pre></td></tr></table></figure>
+
+<h4 id="安装包以允许通过HTTPS使用存储库："><a href="#安装包以允许通过HTTPS使用存储库：" class="headerlink" title="安装包以允许通过HTTPS使用存储库："></a>安装包以允许通过HTTPS使用存储库：</h4><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get install \</span><br><span class="line">    apt-transport-https \</span><br><span class="line">    ca-certificates \</span><br><span class="line">    curl \</span><br><span class="line">    software-properties-common</span><br></pre></td></tr></table></figure>
+
+<h4 id="添加Docker的官方GPG密钥："><a href="#添加Docker的官方GPG密钥：" class="headerlink" title="添加Docker的官方GPG密钥："></a>添加Docker的官方GPG密钥：</h4><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -</span><br></pre></td></tr></table></figure>
+
+<p>通过搜索指纹的最后8个字符，确认您现在拥有指纹9DC8 5822 9FC7 DD38 854A E2D8 8D81 803C 0EBF CD88的密钥。</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-key fingerprint 0EBFCD88</span><br><span class="line"></span><br><span class="line">pub   4096R/0EBFCD88 2017-02-22</span><br><span class="line">      Key fingerprint = 9DC8 5822 9FC7 DD38 854A  E2D8 8D81 803C 0EBF CD88</span><br><span class="line">uid                  Docker Release (CE deb) &lt;docker@docker.com&gt;</span><br><span class="line">sub   4096R/F273FCD8 2017-02-22</span><br></pre></td></tr></table></figure>
+
+<h5 id="使用以下命令设置稳定存储库。即使您还想从边缘或测试存储库安装构建，您始终需要稳定的存储库。要添加边缘或测试存储库，请在以下命令中的单词stable之后添加单词edge或test（或两者）。"><a href="#使用以下命令设置稳定存储库。即使您还想从边缘或测试存储库安装构建，您始终需要稳定的存储库。要添加边缘或测试存储库，请在以下命令中的单词stable之后添加单词edge或test（或两者）。" class="headerlink" title="*使用以下命令设置稳定存储库。即使您还想从边缘或测试存储库安装构建，您始终需要稳定的存储库。要添加边缘或测试存储库，请在以下命令中的单词stable之后添加单词edge或test（或两者）。"></a>*使用以下命令设置稳定存储库。即使您还想从边缘或测试存储库安装构建，您始终需要稳定的存储库。要添加边缘或测试存储库，请在以下命令中的单词stable之后添加单词edge或test（或两者）。</h5><ul>
+<li>注意<br> 注意：下面的lsb_release -cs子命令返回Ubuntu发行版的名称，例如xenial。有时，在像Linux Mint这样的发行版中，您可能需要将$（lsb_release -cs）更改为您的父Ubuntu发行版。例如，如果您使用的是Linux Mint Rafaela，则可以使用trusty。</li>
+</ul>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">sudo add-apt-repository \</span><br><span class="line">   <span class="string">"deb [arch=amd64] https://download.docker.com/linux/ubuntu \</span></span><br><span class="line"><span class="string">   <span class="variable">$(lsb_release -cs)</span> \</span></span><br><span class="line"><span class="string">   stable"</span></span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>注意：从Docker 17.06开始，稳定版本也会被推送到边缘并测试存储库。</li>
+<li><strong>注意：可以不需要，暂时使用，服务器请选择国内比较好。</strong></li>
+</ul>
+<h3 id="安装DOCKER-CE"><a href="#安装DOCKER-CE" class="headerlink" title="安装DOCKER CE"></a>安装DOCKER CE</h3><h4 id="更新apt包索引。"><a href="#更新apt包索引。" class="headerlink" title="更新apt包索引。"></a>更新apt包索引。</h4><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get update</span><br></pre></td></tr></table></figure>
+
+<h4 id="安装最新版本的Docker-CE，或转到下一步安装特定版本："><a href="#安装最新版本的Docker-CE，或转到下一步安装特定版本：" class="headerlink" title="安装最新版本的Docker CE，或转到下一步安装特定版本："></a>安装最新版本的Docker CE，或转到下一步安装特定版本：</h4><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get install docker-ce</span><br></pre></td></tr></table></figure>
+
+<h5 id="要安装特定版本的Docker-CE，请列出repo中的可用版本，然后选择并安装："><a href="#要安装特定版本的Docker-CE，请列出repo中的可用版本，然后选择并安装：" class="headerlink" title="*要安装特定版本的Docker CE，请列出repo中的可用版本，然后选择并安装："></a>*要安装特定版本的Docker CE，请列出repo中的可用版本，然后选择并安装：</h5><ul>
+<li>列出您的仓库中可用的版本：</li>
+</ul>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">apt-cache madison docker-ce</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>通过其完全限定的包名称安装特定版本，即包名称（docker-ce）“=”版本字符串（第2列），例如，docker-ce = 18.03.0ce-0ubuntu。</li>
+</ul>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get install docker-ce=&lt;VERSION&gt;</span><br></pre></td></tr></table></figure>
+
+<h4 id="查看Docker-CE-版本"><a href="#查看Docker-CE-版本" class="headerlink" title="查看Docker CE 版本"></a>查看Docker CE 版本</h4><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker -v</span><br></pre></td></tr></table></figure>
+
+<h4 id="通过运行hello-world映像验证是否正确安装了Docker-CE。"><a href="#通过运行hello-world映像验证是否正确安装了Docker-CE。" class="headerlink" title="通过运行hello-world映像验证是否正确安装了Docker CE。"></a>通过运行hello-world映像验证是否正确安装了Docker CE。</h4><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo docker run hello-world</span><br></pre></td></tr></table></figure>
+
+<p>Docker CE已安装并正在运行。已创建docker组，但未向其添加任何用户。您需要使用sudo来运行Docker命令。继续Linux postinstall以允许非特权用户运行Docker命令和其他可选配置步骤。</p>
+<h3 id="更新"><a href="#更新" class="headerlink" title="更新"></a>更新</h3><p>升级DOCKER CE要升级Docker CE，首先运行sudo apt-get update，然后按照安装说明选择要安装的新版本。</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get update</span><br></pre></td></tr></table></figure>
+
+<h1 id="2-Portainer篇"><a href="#2-Portainer篇" class="headerlink" title="2.Portainer篇"></a>2.Portainer篇</h1><p><strong>利用Docker拉取portainer镜像</strong></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker pull portainer/portainer</span><br></pre></td></tr></table></figure>
+
+<p>运行启动portainer</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker run -d -p 9000:9000 -v /var/run/docker.sock:/var/run/docker.sock -v portainer_data:/data portainer/portainer</span><br></pre></td></tr></table></figure>
+
+<h1 id="3-cockpit篇"><a href="#3-cockpit篇" class="headerlink" title="3.cockpit篇"></a>3.cockpit篇</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt install cockpit</span><br></pre></td></tr></table></figure>
+
+<h5 id="防火墙功能，安装firewalld"><a href="#防火墙功能，安装firewalld" class="headerlink" title="防火墙功能，安装firewalld"></a>防火墙功能，安装firewalld</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt install firewalld</span><br></pre></td></tr></table></figure>
+
+<h5 id="虚拟机管理功能，安装cockpit-machines"><a href="#虚拟机管理功能，安装cockpit-machines" class="headerlink" title="虚拟机管理功能，安装cockpit-machines"></a>虚拟机管理功能，安装cockpit-machines</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt install cockpit-machines</span><br></pre></td></tr></table></figure>
+
+<h5 id="容器管理功能，安装cockpit-podman"><a href="#容器管理功能，安装cockpit-podman" class="headerlink" title="容器管理功能，安装cockpit-podman"></a>容器管理功能，安装cockpit-podman</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sudo apt install cockpit-podman</span><br><span class="line">sudo apt install cockpit-docker</span><br></pre></td></tr></table></figure>
+
+<h5 id="Ubuntu-20-04暂时没有该包cockpit-podman-cockpit-docker"><a href="#Ubuntu-20-04暂时没有该包cockpit-podman-cockpit-docker" class="headerlink" title="*Ubuntu 20.04暂时没有该包cockpit-podman cockpit-docker"></a>*Ubuntu 20.04暂时没有该包cockpit-podman cockpit-docker</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo systemctl start cockpit</span><br></pre></td></tr></table></figure>
+
+<h4 id="参考资料："><a href="#参考资料：" class="headerlink" title="参考资料："></a>参考资料：</h4><h4 id="https-www-jianshu-com-p-83483c35bfcd"><a href="#https-www-jianshu-com-p-83483c35bfcd" class="headerlink" title="https://www.jianshu.com/p/83483c35bfcd"></a><a href="https://www.jianshu.com/p/83483c35bfcd" target="_blank" rel="noopener">https://www.jianshu.com/p/83483c35bfcd</a></h4><h4 id="https-docs-docker-com-engine-install-ubuntu"><a href="#https-docs-docker-com-engine-install-ubuntu" class="headerlink" title="https://docs.docker.com/engine/install/ubuntu/"></a><a href="https://docs.docker.com/engine/install/ubuntu/" target="_blank" rel="noopener">https://docs.docker.com/engine/install/ubuntu/</a></h4><h4 id="http-www-senra-me-docker-management-panel-series-portainer"><a href="#http-www-senra-me-docker-management-panel-series-portainer" class="headerlink" title="http://www.senra.me/docker-management-panel-series-portainer/"></a><a href="http://www.senra.me/docker-management-panel-series-portainer/" target="_blank" rel="noopener">http://www.senra.me/docker-management-panel-series-portainer/</a></h4><h4 id="https-baijiahao-baidu-com-s-id-1666118979367180810-amp-wfr-spider-amp-for-pc"><a href="#https-baijiahao-baidu-com-s-id-1666118979367180810-amp-wfr-spider-amp-for-pc" class="headerlink" title="https://baijiahao.baidu.com/s?id=1666118979367180810&amp;wfr=spider&amp;for=pc"></a><a href="https://baijiahao.baidu.com/s?id=1666118979367180810&amp;wfr=spider&amp;for=pc" target="_blank" rel="noopener">https://baijiahao.baidu.com/s?id=1666118979367180810&amp;wfr=spider&amp;for=pc</a></h4><h4 id="https-linux-cn-article-8473-1-html"><a href="#https-linux-cn-article-8473-1-html" class="headerlink" title="https://linux.cn/article-8473-1.html"></a><a href="https://linux.cn/article-8473-1.html" target="_blank" rel="noopener">https://linux.cn/article-8473-1.html</a></h4>]]></content>
+      
+        <categories>
+            
+            <category> 技术 </category>
+            
+            <category> 操作系统 </category>
+            
+        </categories>
+        
+        
+        <tags>
+            
+            <tag> Ubuntu </tag>
+            
+            <tag> 服务器 </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
+      <title><![CDATA[springboot静态资源映射]]></title>
+      <url>/2019/12/23/springboot%E9%9D%99%E6%80%81%E8%B5%84%E6%BA%90%E6%98%A0%E5%B0%84/</url>
+      <content type="html"><![CDATA[<p>打开执行</p>
+<p>找了大半个文章没一个有干货</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br><span class="line">@echo off</span><br><span class="line">::路径设置</span><br><span class="line">set ideapath=D:\Program Files\JetBrains\IntelliJ IDEA 2017.3.2\bin\</span><br><span class="line">set vnotepath=D:\Program Files (x86)\VNote\</span><br><span class="line">::执行程序</span><br><span class="line">start /d &quot;%vnotepath%&quot; VNote.exe</span><br><span class="line">start /d &quot;%ideapath%&quot; idea64.exe</span><br><span class="line">echo 该脚本编码用的是GBK，及时更新</span><br><span class="line">pause</span><br></pre></td></tr></table></figure>
+
+<p>hexo编译</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Configuration</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">FileServerConfig</span> <span class="keyword">implements</span> <span class="title">WebMvcConfigurer</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="comment">//访问图片方法</span></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">addResourceHandlers</span><span class="params">(ResourceHandlerRegistry registry)</span> </span>&#123;</span><br><span class="line">        <span class="comment">//查询os系统</span></span><br><span class="line">        <span class="comment">//String name = SystemUtil.getOsInfo().getName();</span></span><br><span class="line"></span><br><span class="line">        <span class="keyword">if</span> (getAssetFileServerPath().equals(<span class="string">"ftp"</span>)) &#123;</span><br><span class="line">            registry.addResourceHandler(<span class="string">"/file/**"</span>)</span><br><span class="line">                    .addResourceLocations(<span class="string">"http://127.0.0.1:8080"</span>);</span><br><span class="line">        &#125; <span class="keyword">else</span> <span class="keyword">if</span> (getAssetFileServerPath().equals(<span class="string">"local"</span>)) &#123;</span><br><span class="line">            registry.addResourceHandler(<span class="string">"file/**"</span>)</span><br><span class="line">                    .addResourceLocations(<span class="string">"file:F:/flie/"</span>);</span><br><span class="line">        &#125; <span class="keyword">else</span> <span class="keyword">if</span> (getAssetFileServerPath().equals(<span class="string">"classpath"</span>)) &#123;</span><br><span class="line">            <span class="comment">//项目路径资源无需设置</span></span><br><span class="line">            registry.addResourceHandler(<span class="string">"/file/**"</span>)</span><br><span class="line">                    .addResourceLocations(<span class="string">"classpath:/file/"</span>);</span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">            <span class="comment">//无需设置</span></span><br><span class="line">            registry.addResourceHandler(<span class="string">"/file/**"</span>)</span><br><span class="line">                    .addResourceLocations(<span class="string">"classpath:/file/"</span>);</span><br><span class="line">            		.addResourceLocations(<span class="string">"file:F:/flie/"</span>);</span><br><span class="line">            		.addResourceLocations(<span class="string">"http://127.0.0.1:8080"</span>);</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">        <span class="comment">// 本地文件夹要以"flie:" 开头，文件夹要以"/" 结束</span></span><br><span class="line">        <span class="comment">//windown</span></span><br><span class="line">        <span class="comment">//file:F:/flie/</span></span><br><span class="line">        <span class="comment">//其他</span></span><br><span class="line">        <span class="comment">//file:/flie/</span></span><br><span class="line">        <span class="comment">// 项目文件夹要以"classpath:" 开头，文件夹要以"/" 结束</span></span><br><span class="line">        <span class="comment">//classpath:/file/</span></span><br><span class="line">        <span class="comment">// url没有限制，前缀可以有url文件服务器的编码[charset=UTF-8]</span></span><br><span class="line">        <span class="comment">//https://example.org/path</span></span><br><span class="line">        <span class="comment">//[charset=UTF-8]https://example.org/path</span></span><br><span class="line">       </span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+]]></content>
+      
+        <categories>
+            
+            <category> 技术 </category>
+            
+            <category> spring </category>
+            
+        </categories>
+        
+        
+        <tags>
+            
+            <tag> spring </tag>
+            
+            <tag> spingboot </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
+      <title><![CDATA[tomcat文件服务器]]></title>
+      <url>/2019/08/12/tomcat%E6%96%87%E4%BB%B6%E6%9C%8D%E5%8A%A1%E5%99%A8/</url>
+      <content type="html"><![CDATA[<p>由于tomcat部署与idea部署分为单独的服务器，分为2种情况部署</p>
+<h3 id="第一种：项目在idea的tomcat部署"><a href="#第一种：项目在idea的tomcat部署" class="headerlink" title="第一种：项目在idea的tomcat部署"></a>第一种：项目在idea的tomcat部署</h3><figure class="image-box">
+                <img src="/img/tomcat文件服务器.assets/1565602055313.png" alt="1565602055313" title class>
+                <p>1565602055313</p>
+            </figure>
+
+<figure class="image-box">
+                <img src="/img/tomcat文件服务器.assets/1565602117231.png" alt="1565602117231" title class>
+                <p>1565602117231</p>
+            </figure>
+
+<figure class="image-box">
+                <img src="/img/tomcat文件服务器.assets/1565602192580.png" alt="1565602192580" title class>
+                <p>1565602192580</p>
+            </figure>
+
+<p>访问：<a href="http://127.0.0.1:8080/docsave" target="_blank" rel="noopener">http://127.0.0.1:8080/docsave</a></p>
+<h3 id="第2种：tomcat文件服务器"><a href="#第2种：tomcat文件服务器" class="headerlink" title="第2种：tomcat文件服务器"></a>第2种：tomcat文件服务器</h3><p>tomcat作为项目服务器时因为权限问题，只能访问Tomcat文件夹下的资源（例如：WEB-INF）。</p>
+<p>在tomcat根目录/conf/server.xml中加入如下配置，即可访问指定的文件。</p>
+<p>Tomcat 7.0\conf\server.xml 找到Host标签加入如下内容：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;Context path=&quot;/asset/docsave&quot; docBase=&quot;D:\docsave&quot;/&gt;</span><br></pre></td></tr></table></figure>
+
+<p>或者</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;Context path=&quot;/img&quot; docBase=&quot;D:\docsave&quot;/&gt;</span><br></pre></td></tr></table></figure>
+
+<p>访问：<a href="http://127.0.0.1:8080/img" target="_blank" rel="noopener">http://127.0.0.1:8080/img</a></p>
+]]></content>
+      
+        <categories>
+            
+            <category> 技术 </category>
+            
+            <category> tomcat </category>
+            
+        </categories>
+        
+        
+        <tags>
+            
+            <tag> tomcat </tag>
+            
+            <tag> 文件服务器 </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
+      <title><![CDATA[自动执行样版bat]]></title>
+      <url>/2019/07/26/%E8%87%AA%E5%8A%A8%E6%89%A7%E8%A1%8C%E6%A0%B7%E7%89%88bat/</url>
+      <content type="html"><![CDATA[<p>打开执行</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">@echo off</span><br><span class="line">::路径设置</span><br><span class="line">set ideapath=D:\Program Files\JetBrains\IntelliJ IDEA 2017.3.2\bin\</span><br><span class="line">set vnotepath=D:\Program Files (x86)\VNote\</span><br><span class="line">::执行程序</span><br><span class="line">start /d &quot;%vnotepath%&quot; VNote.exe</span><br><span class="line">start /d &quot;%ideapath%&quot; idea64.exe</span><br><span class="line">echo 该脚本编码用的是GBK，及时更新</span><br><span class="line">pause</span><br></pre></td></tr></table></figure>
+
+<p>hexo编译</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">@echo off</span><br><span class="line">title 更新hexo-本地部署</span><br><span class="line">echo ###################hexoblog更新#################</span><br><span class="line">CMD /C hexo clean</span><br><span class="line">CMD /C hexo g</span><br><span class="line"></span><br><span class="line">echo 该脚本编码用的是GBK，及时更新</span><br><span class="line"></span><br><span class="line">pause</span><br></pre></td></tr></table></figure>
+
+<p>一键git更新github</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br></pre></td><td class="code"><pre><span class="line">@echo off</span><br><span class="line">title 更新git推送github</span><br><span class="line"></span><br><span class="line">echo 脚本开始于%date%%time%</span><br><span class="line"></span><br><span class="line">::路径设置</span><br><span class="line">set vnotepath=x:\xx\x</span><br><span class="line">set hexoblogpath=x:\xx\x</span><br><span class="line">set githubpath=x:\xx\x</span><br><span class="line"></span><br><span class="line">echo ###################vnote笔记更新#################</span><br><span class="line">::更新笔记 vnote-log master</span><br><span class="line">cd /d %vnotepath%</span><br><span class="line">echo %vnotepath%</span><br><span class="line">git add .</span><br><span class="line">git commit -m &quot;自动更新-%date%&quot;</span><br><span class="line">git push origin master:master</span><br><span class="line"></span><br><span class="line">echo ###################hexoblog更新#################</span><br><span class="line">::自动部署hexo博客 master分支</span><br><span class="line">cd /d %githubpath%</span><br><span class="line">echo %githubpath%</span><br><span class="line">CMD /C hexo clean</span><br><span class="line">CMD /C hexo g</span><br><span class="line">CMD /C hexo d</span><br><span class="line"></span><br><span class="line">echo ###################hexo源文件更新#################</span><br><span class="line">::自动更新hexo源文件 hexo分支</span><br><span class="line">cd /d %githubpath%</span><br><span class="line">echo %githubpath%</span><br><span class="line">rmdir /q /s  %githubpath%\.deploy_git</span><br><span class="line"></span><br><span class="line">git add .</span><br><span class="line">git commit -m &quot;自动更新-%date%&quot;</span><br><span class="line">git push origin hexo:hexo</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">echo 该脚本编码用的是GBK，及时更新</span><br><span class="line"></span><br><span class="line">echo 脚本结束于%date%%time%</span><br><span class="line">pause</span><br></pre></td></tr></table></figure>
+
+]]></content>
+      
+        <categories>
+            
+            <category> 技术 </category>
+            
+            <category> 批处理 </category>
+            
+        </categories>
+        
+        
+        <tags>
+            
+            <tag> bat </tag>
+            
+            <tag> 批处理 </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
+      <title><![CDATA[bat批处理命令说明]]></title>
+      <url>/2019/07/26/bat%E6%89%B9%E5%A4%84%E7%90%86%E5%91%BD%E4%BB%A4%E8%AF%B4%E6%98%8E/</url>
+      <content type="html"><![CDATA[<h4 id="格式"><a href="#格式" class="headerlink" title="格式"></a>格式</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">@echo off</span><br><span class="line">title 标题</span><br><span class="line">echo 显示信息</span><br><span class="line">pause</span><br></pre></td></tr></table></figure>
+
+<h5 id="Echo-命令"><a href="#Echo-命令" class="headerlink" title="Echo 命令"></a>Echo 命令</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">echo [message]</span><br></pre></td></tr></table></figure>
+
+<p>显示[message]信息</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">echo off</span><br></pre></td></tr></table></figure>
+
+<p>echo off 表示在此语句后所有运行的命令都不显示命令行本身；默认是on，on时会显示如： C:\文件夹路径&gt;命令行。</p>
+<h5 id="命令"><a href="#命令" class="headerlink" title="@ 命令"></a>@ 命令</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">@</span><br><span class="line">@echo off</span><br></pre></td></tr></table></figure>
+
+<p>只能加在每个命令行的最前面，表示运行时不显示这一行的命令行(只能影响当前行)。</p>
+<h5 id="Rem-命令"><a href="#Rem-命令" class="headerlink" title="Rem 命令"></a>Rem 命令</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Rem 注释</span><br><span class="line">:: 注释</span><br></pre></td></tr></table></figure>
+
+<p>::或rem，起一个注释的作用</p>
+<h5 id="Pause-命令"><a href="#Pause-命令" class="headerlink" title="Pause 命令"></a>Pause 命令</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Pause</span><br></pre></td></tr></table></figure>
+
+<p>会暂停批处理的执行并在屏幕上显示Press any key to continue…的提示，等待用户按任意键后继续</p>
+<h5 id="Call-命令"><a href="#Call-命令" class="headerlink" title="Call 命令"></a>Call 命令</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">call=&quot;%cd%\xxx.bat&quot; arg1 arg2 arg3 (调用指定目录下的 xxx.bat，且输入3个参数给他)</span><br><span class="line">call xxx.bat arg1 arg2 (调用同目录下的 xxx.bat，且输入2个参数给他)</span><br></pre></td></tr></table></figure>
+
+<p>调用另一个批处理程序，并且不终止父批处理程序。</p>
+<h5 id="start-命令"><a href="#start-命令" class="headerlink" title="start 命令"></a>start 命令</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">start /MIN test2.bat arg1 arg2 (调用同目录下的 test2.bat，且输入2个参数给他，且本窗口最小化)</span><br><span class="line">X:\&quot;program files&quot;\xxx\xxx.exe (文件路径名有空格时)</span><br><span class="line">start /d &quot;%cd%&quot; xxx.exe（/d 按路径执行 注意空格）</span><br></pre></td></tr></table></figure>
+
+<p>调用外部程序，所有的 DOS命令 和 命令行程序 都可以由 start命令 来调用。</p>
+<p>入侵常用参数：</p>
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>MIN</td>
+<td>开始时窗口最小化</td>
+</tr>
+<tr>
+<td>SEPARATE</td>
+<td>在分开的空间内开始 16 位 Windows 程序</td>
+</tr>
+<tr>
+<td>HIGH</td>
+<td>在 HIGH 优先级类别开始应用程序</td>
+</tr>
+<tr>
+<td>REALTIME</td>
+<td>在 REALTIME 优先级类别开始应用程序</td>
+</tr>
+<tr>
+<td>WAIT</td>
+<td>启动应用程序并等候它结束</td>
+</tr>
+<tr>
+<td>parameters</td>
+<td>这些为传送到命令/程序的参数</td>
+</tr>
+</tbody></table>
+<p>调用其他程序时，对文件的大小写不敏感，文件后缀也可忽略</p>
+<h5 id="If-命令"><a href="#If-命令" class="headerlink" title="If 命令"></a>If 命令</h5><ol>
+<li><p>IF</p>
+</li>
+<li><p>if exist</p>
+</li>
+<li><p>if errorlevel number</p>
+<p>if [not] “参数” == “字符串” 待执行的命令</p>
+</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">if &#123;%1&#125; == &#123;&#125; goto noparms</span><br></pre></td></tr></table></figure>
+
+<p> if [not] exist [路径]文件名 待执行的命令</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">if exist config.sys edit config.sys (表示如果存在这文件，则编辑它)</span><br><span class="line">if exist config.sys type config.sys (表示如果存在这文件，则显示它的内容)</span><br></pre></td></tr></table></figure>
+
+<p>if [not] errorlevel &lt;数字&gt; 待执行的命令</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">IF ERRORLEVEL 1 (ECHO 失败) Else IF ERRORLEVEL 0 ECHO 成功</span><br></pre></td></tr></table></figure>
+
+<h5 id="else"><a href="#else" class="headerlink" title="else"></a>else</h5><p> if 条件 (成立时执行的命令) else (不成立时执行的命令)</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"> if 1 == 0 ( echo comment1 ) else if 1==0 ( echo comment2 ) ^</span><br><span class="line"></span><br><span class="line">else (echo comment3 )</span><br></pre></td></tr></table></figure>
+
+<p>注：如果 else 的语句需要换行，if 执行的行尾需用“^”连接，并且 if 执行的动作需用(括起来)，否则报错</p>
+<h5 id="shutdown命令"><a href="#shutdown命令" class="headerlink" title="shutdown命令"></a>shutdown命令</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">shutdown -s</span><br></pre></td></tr></table></figure>
+
+<p>关机</p>
+<h5 id="random-命令"><a href="#random-命令" class="headerlink" title="random 命令"></a>random 命令</h5><p>产生随机数(正整数0~)</p>
+<h5 id="exit-命令"><a href="#exit-命令" class="headerlink" title="exit 命令"></a>exit 命令</h5><p>结束程序。即时是被调用的程序，结束后也不会返回原程序</p>
+<h4 id="文件处理"><a href="#文件处理" class="headerlink" title="文件处理"></a>文件处理</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">rd /q /s x:\xxx\xxx</span><br></pre></td></tr></table></figure>
+
+<p>删除一个空目录</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">md x:\xxx\xxx</span><br></pre></td></tr></table></figure>
+
+<p>创建目录</p>
+<h5 id="删除一个文件或多个文件"><a href="#删除一个文件或多个文件" class="headerlink" title="删除一个文件或多个文件"></a>删除一个文件或多个文件</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">del /s /q /f x:\xxx\x.bat</span><br></pre></td></tr></table></figure>
+
+<p>将直接删除x:\xxx\x.bat，没有任务提示</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">del temp\* /q /f /s</span><br></pre></td></tr></table></figure>
+
+<p>将直接删除 本目录的 temp 目录的所有文件，没有任务提示</p>
+<p>删除文件的时候可以使用“*”作通配符</p>
+<h5 id="删除一个非空目录"><a href="#删除一个非空目录" class="headerlink" title="删除一个非空目录"></a>删除一个非空目录</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">rmdir /q /s x:\xxx\xxx</span><br></pre></td></tr></table></figure>
+
+<p>必须指定目录名称，不能使用通配符</p>
+<p>/S 除目录本身外，还将删除指定目录下的所有子目录</p>
+<p>/Q 安静模式，带 /S 删除目录树时不要求确认</p>
+<p>无论里面是否有文件或文件夹将全部直接删除</p>
+<h5 id="XCOPY命令"><a href="#XCOPY命令" class="headerlink" title="XCOPY命令"></a>XCOPY命令</h5><p>XCOPY source [destination] [命令参数]</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">xcopy %cd%\xxx  %cd%\xxx /E/y</span><br><span class="line">xcopy d:&quot;mp3 e:&quot;mp3 /s/e/i/y</span><br></pre></td></tr></table></figure>
+
+<p>复制 d:”mp3 文件夹、所有子文件夹和文件到 e:” ，覆盖已有文件</p>
+<p>加 /i 表示如果 e:” 没有 mp3 文件夹就自动新建一个，否则会有询问</p>
+<table>
+<thead>
+<tr>
+<th>XCOPY source [destination]</th>
+<th>[/A | /M] [/D[:date]] [/P] [/S [/E]] [/V] [/W] 　　[/C] [/I] [/Q] [/F] [/L] [/G] [/H] [/R] [/T] [/U] 　　[/K] [/N] [/O] [/X] [/Y] [/-Y] [/Z] 　　[/EXCLUDE:file1[+file2][+file3]…]</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>source</td>
+<td>指定要复制的文件。</td>
+</tr>
+<tr>
+<td>destination</td>
+<td>指定新文件的位置和/或名称。</td>
+</tr>
+<tr>
+<td>/A</td>
+<td>只复制有存档属性集的文件， 　　但不改变属性。</td>
+</tr>
+<tr>
+<td>/M</td>
+<td>只复制有存档属性集的文件， 　　并关闭存档属性。</td>
+</tr>
+<tr>
+<td>/D:m-d-y</td>
+<td>复制在指定日期或指定日期以后更改的文件。 　　如果没有提供日期，只复制那些源时间 　　比目标时间新的文件。</td>
+</tr>
+<tr>
+<td>/EXCLUDE:file1[+file2][+file3]…</td>
+<td>指定含有字符串的文件列表。每一个字符串 　　必须在文件的单独行中。如果有任何 　　字符串与要被复制的文件的绝对路径 　　相符，那个文件将不会得到复制。 　　例如，指定如 \obj\ 或 .obj 的字符串会排除 　　目录 obj 下面的所有文件或带有 　　.obj 扩展名的文件。</td>
+</tr>
+<tr>
+<td>/P</td>
+<td>创建每个目标文件前提示。</td>
+</tr>
+<tr>
+<td>/S</td>
+<td>复制目录和子目录，除了空的。</td>
+</tr>
+<tr>
+<td>/E</td>
+<td>复制目录和子目录，包括空的。与 /S /E 相同。可以用来修改 /T。</td>
+</tr>
+<tr>
+<td>/V</td>
+<td>验证每个新文件。</td>
+</tr>
+<tr>
+<td>/W</td>
+<td>提示您在复制前按键。</td>
+</tr>
+<tr>
+<td>/C</td>
+<td>即使有错误，也继续复制。</td>
+</tr>
+<tr>
+<td>/I</td>
+<td>如果目标不存在，又在复制一个以上的文件，则假定目标一定是一个目录。</td>
+</tr>
+<tr>
+<td>/Q</td>
+<td>复制时不显示文件名。</td>
+</tr>
+<tr>
+<td>/F</td>
+<td>复制时显示完整的源和目标文件名。</td>
+</tr>
+<tr>
+<td>/L</td>
+<td>显示要复制的文件。</td>
+</tr>
+<tr>
+<td>/G</td>
+<td>允许将没有经过加密的文件复制到不支持加密的目标。</td>
+</tr>
+<tr>
+<td>/H</td>
+<td>也复制隐藏和系统文件。</td>
+</tr>
+<tr>
+<td>/R</td>
+<td>覆盖只读文件。</td>
+</tr>
+<tr>
+<td>/T</td>
+<td>创建目录结构，但不复制文件。 　　不包括空目录或子目录。/T /E 包括 　　空目录和子目录。</td>
+</tr>
+<tr>
+<td>/U</td>
+<td>只复制已经存在于目标中的文件。</td>
+</tr>
+<tr>
+<td>/K</td>
+<td>复制属性。一般的 Xcopy 会重置只读属性。</td>
+</tr>
+<tr>
+<td>/N</td>
+<td>用生成的短名复制。</td>
+</tr>
+<tr>
+<td>/O</td>
+<td>复制文件所有权和 ACL 信息。</td>
+</tr>
+<tr>
+<td>/X</td>
+<td>复制文件审核设置(隐含 /O)。</td>
+</tr>
+<tr>
+<td>/Y</td>
+<td>复制文件审核设置(隐含 /O)。 　　现存目标文件。 　　【就是直接覆盖——Three~注】</td>
+</tr>
+<tr>
+<td>/-Y</td>
+<td>导致提示以确认改写一个 　　现存目标文件。</td>
+</tr>
+<tr>
+<td>/Z</td>
+<td>用重新启动模式复制网络文件。</td>
+</tr>
+<tr>
+<td></td>
+<td>命令行开关 /Y 可以预先在 COPYCMD 环境变量中设置。 　　这可能被命令行上的 /-Y 改写。</td>
+</tr>
+<tr>
+<td></td>
+<td>/B 复制符号链接本身与链接目标相对。</td>
+</tr>
+<tr>
+<td></td>
+<td>/J 复制时不使用缓冲的 I/O。推荐复制大文件时使用。</td>
+</tr>
+</tbody></table>
+<p>时间</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">set &quot;year=%date:~0,4%&quot;</span><br><span class="line">set &quot;month=%date:~5,2%&quot;</span><br><span class="line">set &quot;day=%date:~8,2%&quot;</span><br><span class="line">set &quot;hour_ten=%time:~0,1%&quot;</span><br><span class="line">set &quot;hour_one=%time:~1,1%&quot;</span><br><span class="line">set &quot;minute=%time:~3,2%&quot;</span><br><span class="line">set &quot;second=%time:~6,2%&quot;</span><br></pre></td></tr></table></figure>
+
+<p>参考：<a href="https://blog.csdn.net/qq_36838191/article/details/83046599" target="_blank" rel="noopener">https://blog.csdn.net/qq_36838191/article/details/83046599</a></p>
+]]></content>
+      
+        <categories>
+            
+            <category> 技术 </category>
+            
+            <category> 批处理 </category>
+            
+        </categories>
+        
+        
+        <tags>
+            
+            <tag> bat </tag>
+            
+            <tag> 批处理 </tag>
+            
+        </tags>
+        
+    </entry>
+    
+  
+  
+</search>

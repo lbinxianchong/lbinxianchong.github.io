@@ -1,0 +1,658 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.9.0">
+    <meta charset="utf-8">
+    
+    
+    <title>bat批处理命令说明 | lbin@Refuge</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="keywords" content="bat,批处理">
+    <link rel="shortcut icon" href="/img/favicon.ico">
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.2/dist/jquery.fancybox.min.css">
+    <link rel="stylesheet" href="/css/style.css?v=1.4.3">
+    
+    <script type="text/javascript">
+        // Data Center
+        var DC = {
+            reward:	false,
+            lv: JSON.parse('{"enable":false,"app_id":null,"app_key":null,"icon":true}'),
+            v: JSON.parse('{"enable":false,"appid":null,"appkey":null,"notify":true,"verify":true,"placeholder":"give me some sugers plz...","avatar":"wavatar"}'),
+            g: JSON.parse('{"enable":false,"lazy":true,"owner":"codefine","repo":"gitment","oauth":{"client_id":null,"client_secret":null},"perPage":10}'),
+            d: JSON.parse('{"app_id":null}')
+        };
+    </script>
+    <script type="text/javascript">
+        window.lazyScripts=[];
+    </script>
+    
+</head>
+
+
+<body>
+    <div id="loading" class="active"></div>
+
+    <aside id="menu" class="">
+  <div class="inner flex-row-vertical">
+    <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
+        <i class="icon icon-lg icon-close"></i>
+    </a>
+    <div class="brand-wrap">
+      
+      <img src="/img/brand.jpg" class="brand-bg">
+      
+      <div class="brand">
+        <a href="/" class="avatar waves-effect waves-circle waves-light">
+          <img src="/img/avatar.jpg">
+        </a>
+        <hgroup class="introduce">
+          <h5 class="nickname">lbin</h5>
+          <a href="mailto:不存在的" title="不存在的" class="mail">
+            
+              <span>不</span>
+            
+              <span>存</span>
+            
+              <span>在</span>
+            
+              <span>的</span>
+            
+          </a>
+        </hgroup>
+        
+        <ul class="menu-link">
+          
+              <li>
+                <a href="https://github.com/codefine" target="_blank">
+                  <i class="icon icon-lg icon-github"></i>
+                </a>
+              </li>
+            
+        </ul>
+        
+      </div>
+    </div>
+    <div class="scroll-wrap flex-col">
+      <ul class="nav">
+        
+            <li class="">
+              <a href="/"  >
+                <i class="icon icon-lg icon-home"></i>
+                主页
+              </a>
+            </li>
+        
+            <li class="">
+              <a href="/categories"  >
+                <i class="icon icon-lg icon-th-list"></i>
+                分类
+              </a>
+            </li>
+        
+            <li class="">
+              <a href="/tags"  >
+                <i class="icon icon-lg icon-tags"></i>
+                标签
+              </a>
+            </li>
+        
+            <li class="">
+              <a href="/archives"  >
+                <i class="icon icon-lg icon-archives"></i>
+                归档
+              </a>
+            </li>
+        
+            <li class="">
+              <a href="/custom"  >
+                <i class="icon icon-lg icon-plus-square"></i>
+                待开发
+              </a>
+            </li>
+        
+      </ul>
+    </div>
+  </div>
+</aside>
+
+    <main id="main">
+        <header class="top-header" id="header">
+    <div class="flex-row clearfix">
+        <a href="javascript:;" class="header-icon pull-left waves-effect waves-circle waves-light on" id="menu-toggle">
+          <i class="icon icon-lg icon-navicon"></i>
+        </a>
+        <div class="flex-col header-title ellipsis">
+            <span>bat批处理命令说明</span>
+            
+        </div>
+        
+        <a href="javascript:;" id="site_search_btn" class="header-icon pull-right waves-effect waves-circle waves-light">
+            <i class="icon icon-lg icon-search"></i>
+        </a>
+        
+    </div>
+</header>
+<header class="content-header post-header">
+    <img src="/img/banner.jpg" class="header-bg">
+    <div class="container fade-scale">
+        <h1 class="title">bat批处理命令说明</h1>
+        <h5 class="subtitle">
+            
+                <time datetime="2019-07-26T08:05:53.000Z" itemprop="datePublished" class="page-time">
+  2019-07-26
+</time>
+
+
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/技术/">技术</a><ul class="article-category-list-child"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/技术/批处理/">批处理</a></li></ul></li></ul>
+
+            
+        </h5>
+        
+    </div>
+    
+
+</header>
+
+<div id="site_search">
+    <div class="search-title clearfix">
+        <span class="pull-left">
+          <i class="icon icon-lg icon-search"></i>
+        </span>
+        <input type="text" id="local-search-input" name="q" results="0" placeholder="search my blog..." class="form-control pull-left"/>
+        <a href="javascript:;" class="close pull-right waves-effect waves-circle waves-light">
+          <i class="icon icon-lg icon-close"></i>
+        </a>
+    </div>
+    <div id="local-search-result"></div>
+</div>
+
+
+<div class="container body-wrap">
+    <article id="post-bat批处理命令说明"
+  class="post-article article-type-post" itemprop="blogPost">
+    <div class="post-card">
+        <h1 class="post-card-title">bat批处理命令说明</h1>
+        <div class="post-meta">
+            <time class="post-time" title="2019-07-26 16:05:53" datetime="2019-07-26T08:05:53.000Z"  itemprop="datePublished">2019-07-26</time>
+
+            
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/技术/">技术</a><ul class="article-category-list-child"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/技术/批处理/">批处理</a></li></ul></li></ul>
+
+
+
+            
+
+            
+
+
+            
+        </div>
+        <div class="post-content" id="post-content" itemprop="postContent">
+            
+            <h4 id="格式"><a href="#格式" class="headerlink" title="格式"></a>格式</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">@echo off</span><br><span class="line">title 标题</span><br><span class="line">echo 显示信息</span><br><span class="line">pause</span><br></pre></td></tr></table></figure>
+
+<h5 id="Echo-命令"><a href="#Echo-命令" class="headerlink" title="Echo 命令"></a>Echo 命令</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">echo [message]</span><br></pre></td></tr></table></figure>
+
+<p>显示[message]信息</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">echo off</span><br></pre></td></tr></table></figure>
+
+<p>echo off 表示在此语句后所有运行的命令都不显示命令行本身；默认是on，on时会显示如： C:\文件夹路径&gt;命令行。</p>
+<h5 id="命令"><a href="#命令" class="headerlink" title="@ 命令"></a>@ 命令</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">@</span><br><span class="line">@echo off</span><br></pre></td></tr></table></figure>
+
+<p>只能加在每个命令行的最前面，表示运行时不显示这一行的命令行(只能影响当前行)。</p>
+<h5 id="Rem-命令"><a href="#Rem-命令" class="headerlink" title="Rem 命令"></a>Rem 命令</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Rem 注释</span><br><span class="line">:: 注释</span><br></pre></td></tr></table></figure>
+
+<p>::或rem，起一个注释的作用</p>
+<h5 id="Pause-命令"><a href="#Pause-命令" class="headerlink" title="Pause 命令"></a>Pause 命令</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Pause</span><br></pre></td></tr></table></figure>
+
+<p>会暂停批处理的执行并在屏幕上显示Press any key to continue…的提示，等待用户按任意键后继续</p>
+<h5 id="Call-命令"><a href="#Call-命令" class="headerlink" title="Call 命令"></a>Call 命令</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">call=&quot;%cd%\xxx.bat&quot; arg1 arg2 arg3 (调用指定目录下的 xxx.bat，且输入3个参数给他)</span><br><span class="line">call xxx.bat arg1 arg2 (调用同目录下的 xxx.bat，且输入2个参数给他)</span><br></pre></td></tr></table></figure>
+
+<p>调用另一个批处理程序，并且不终止父批处理程序。</p>
+<h5 id="start-命令"><a href="#start-命令" class="headerlink" title="start 命令"></a>start 命令</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">start /MIN test2.bat arg1 arg2 (调用同目录下的 test2.bat，且输入2个参数给他，且本窗口最小化)</span><br><span class="line">X:\&quot;program files&quot;\xxx\xxx.exe (文件路径名有空格时)</span><br><span class="line">start /d &quot;%cd%&quot; xxx.exe（/d 按路径执行 注意空格）</span><br></pre></td></tr></table></figure>
+
+<p>调用外部程序，所有的 DOS命令 和 命令行程序 都可以由 start命令 来调用。</p>
+<p>入侵常用参数：</p>
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>MIN</td>
+<td>开始时窗口最小化</td>
+</tr>
+<tr>
+<td>SEPARATE</td>
+<td>在分开的空间内开始 16 位 Windows 程序</td>
+</tr>
+<tr>
+<td>HIGH</td>
+<td>在 HIGH 优先级类别开始应用程序</td>
+</tr>
+<tr>
+<td>REALTIME</td>
+<td>在 REALTIME 优先级类别开始应用程序</td>
+</tr>
+<tr>
+<td>WAIT</td>
+<td>启动应用程序并等候它结束</td>
+</tr>
+<tr>
+<td>parameters</td>
+<td>这些为传送到命令/程序的参数</td>
+</tr>
+</tbody></table>
+<p>调用其他程序时，对文件的大小写不敏感，文件后缀也可忽略</p>
+<h5 id="If-命令"><a href="#If-命令" class="headerlink" title="If 命令"></a>If 命令</h5><ol>
+<li><p>IF</p>
+</li>
+<li><p>if exist</p>
+</li>
+<li><p>if errorlevel number</p>
+<p>if [not] “参数” == “字符串” 待执行的命令</p>
+</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">if &#123;%1&#125; == &#123;&#125; goto noparms</span><br></pre></td></tr></table></figure>
+
+<p> if [not] exist [路径]文件名 待执行的命令</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">if exist config.sys edit config.sys (表示如果存在这文件，则编辑它)</span><br><span class="line">if exist config.sys type config.sys (表示如果存在这文件，则显示它的内容)</span><br></pre></td></tr></table></figure>
+
+<p>if [not] errorlevel &lt;数字&gt; 待执行的命令</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">IF ERRORLEVEL 1 (ECHO 失败) Else IF ERRORLEVEL 0 ECHO 成功</span><br></pre></td></tr></table></figure>
+
+<h5 id="else"><a href="#else" class="headerlink" title="else"></a>else</h5><p> if 条件 (成立时执行的命令) else (不成立时执行的命令)</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"> if 1 == 0 ( echo comment1 ) else if 1==0 ( echo comment2 ) ^</span><br><span class="line"></span><br><span class="line">else (echo comment3 )</span><br></pre></td></tr></table></figure>
+
+<p>注：如果 else 的语句需要换行，if 执行的行尾需用“^”连接，并且 if 执行的动作需用(括起来)，否则报错</p>
+<h5 id="shutdown命令"><a href="#shutdown命令" class="headerlink" title="shutdown命令"></a>shutdown命令</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">shutdown -s</span><br></pre></td></tr></table></figure>
+
+<p>关机</p>
+<h5 id="random-命令"><a href="#random-命令" class="headerlink" title="random 命令"></a>random 命令</h5><p>产生随机数(正整数0~)</p>
+<h5 id="exit-命令"><a href="#exit-命令" class="headerlink" title="exit 命令"></a>exit 命令</h5><p>结束程序。即时是被调用的程序，结束后也不会返回原程序</p>
+<h4 id="文件处理"><a href="#文件处理" class="headerlink" title="文件处理"></a>文件处理</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">rd /q /s x:\xxx\xxx</span><br></pre></td></tr></table></figure>
+
+<p>删除一个空目录</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">md x:\xxx\xxx</span><br></pre></td></tr></table></figure>
+
+<p>创建目录</p>
+<h5 id="删除一个文件或多个文件"><a href="#删除一个文件或多个文件" class="headerlink" title="删除一个文件或多个文件"></a>删除一个文件或多个文件</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">del /s /q /f x:\xxx\x.bat</span><br></pre></td></tr></table></figure>
+
+<p>将直接删除x:\xxx\x.bat，没有任务提示</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">del temp\* /q /f /s</span><br></pre></td></tr></table></figure>
+
+<p>将直接删除 本目录的 temp 目录的所有文件，没有任务提示</p>
+<p>删除文件的时候可以使用“*”作通配符</p>
+<h5 id="删除一个非空目录"><a href="#删除一个非空目录" class="headerlink" title="删除一个非空目录"></a>删除一个非空目录</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">rmdir /q /s x:\xxx\xxx</span><br></pre></td></tr></table></figure>
+
+<p>必须指定目录名称，不能使用通配符</p>
+<p>/S 除目录本身外，还将删除指定目录下的所有子目录</p>
+<p>/Q 安静模式，带 /S 删除目录树时不要求确认</p>
+<p>无论里面是否有文件或文件夹将全部直接删除</p>
+<h5 id="XCOPY命令"><a href="#XCOPY命令" class="headerlink" title="XCOPY命令"></a>XCOPY命令</h5><p>XCOPY source [destination] [命令参数]</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">xcopy %cd%\xxx  %cd%\xxx /E/y</span><br><span class="line">xcopy d:&quot;mp3 e:&quot;mp3 /s/e/i/y</span><br></pre></td></tr></table></figure>
+
+<p>复制 d:”mp3 文件夹、所有子文件夹和文件到 e:” ，覆盖已有文件</p>
+<p>加 /i 表示如果 e:” 没有 mp3 文件夹就自动新建一个，否则会有询问</p>
+<table>
+<thead>
+<tr>
+<th>XCOPY source [destination]</th>
+<th>[/A | /M] [/D[:date]] [/P] [/S [/E]] [/V] [/W] 　　[/C] [/I] [/Q] [/F] [/L] [/G] [/H] [/R] [/T] [/U] 　　[/K] [/N] [/O] [/X] [/Y] [/-Y] [/Z] 　　[/EXCLUDE:file1[+file2][+file3]…]</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>source</td>
+<td>指定要复制的文件。</td>
+</tr>
+<tr>
+<td>destination</td>
+<td>指定新文件的位置和/或名称。</td>
+</tr>
+<tr>
+<td>/A</td>
+<td>只复制有存档属性集的文件， 　　但不改变属性。</td>
+</tr>
+<tr>
+<td>/M</td>
+<td>只复制有存档属性集的文件， 　　并关闭存档属性。</td>
+</tr>
+<tr>
+<td>/D:m-d-y</td>
+<td>复制在指定日期或指定日期以后更改的文件。 　　如果没有提供日期，只复制那些源时间 　　比目标时间新的文件。</td>
+</tr>
+<tr>
+<td>/EXCLUDE:file1[+file2][+file3]…</td>
+<td>指定含有字符串的文件列表。每一个字符串 　　必须在文件的单独行中。如果有任何 　　字符串与要被复制的文件的绝对路径 　　相符，那个文件将不会得到复制。 　　例如，指定如 \obj\ 或 .obj 的字符串会排除 　　目录 obj 下面的所有文件或带有 　　.obj 扩展名的文件。</td>
+</tr>
+<tr>
+<td>/P</td>
+<td>创建每个目标文件前提示。</td>
+</tr>
+<tr>
+<td>/S</td>
+<td>复制目录和子目录，除了空的。</td>
+</tr>
+<tr>
+<td>/E</td>
+<td>复制目录和子目录，包括空的。与 /S /E 相同。可以用来修改 /T。</td>
+</tr>
+<tr>
+<td>/V</td>
+<td>验证每个新文件。</td>
+</tr>
+<tr>
+<td>/W</td>
+<td>提示您在复制前按键。</td>
+</tr>
+<tr>
+<td>/C</td>
+<td>即使有错误，也继续复制。</td>
+</tr>
+<tr>
+<td>/I</td>
+<td>如果目标不存在，又在复制一个以上的文件，则假定目标一定是一个目录。</td>
+</tr>
+<tr>
+<td>/Q</td>
+<td>复制时不显示文件名。</td>
+</tr>
+<tr>
+<td>/F</td>
+<td>复制时显示完整的源和目标文件名。</td>
+</tr>
+<tr>
+<td>/L</td>
+<td>显示要复制的文件。</td>
+</tr>
+<tr>
+<td>/G</td>
+<td>允许将没有经过加密的文件复制到不支持加密的目标。</td>
+</tr>
+<tr>
+<td>/H</td>
+<td>也复制隐藏和系统文件。</td>
+</tr>
+<tr>
+<td>/R</td>
+<td>覆盖只读文件。</td>
+</tr>
+<tr>
+<td>/T</td>
+<td>创建目录结构，但不复制文件。 　　不包括空目录或子目录。/T /E 包括 　　空目录和子目录。</td>
+</tr>
+<tr>
+<td>/U</td>
+<td>只复制已经存在于目标中的文件。</td>
+</tr>
+<tr>
+<td>/K</td>
+<td>复制属性。一般的 Xcopy 会重置只读属性。</td>
+</tr>
+<tr>
+<td>/N</td>
+<td>用生成的短名复制。</td>
+</tr>
+<tr>
+<td>/O</td>
+<td>复制文件所有权和 ACL 信息。</td>
+</tr>
+<tr>
+<td>/X</td>
+<td>复制文件审核设置(隐含 /O)。</td>
+</tr>
+<tr>
+<td>/Y</td>
+<td>复制文件审核设置(隐含 /O)。 　　现存目标文件。 　　【就是直接覆盖——Three~注】</td>
+</tr>
+<tr>
+<td>/-Y</td>
+<td>导致提示以确认改写一个 　　现存目标文件。</td>
+</tr>
+<tr>
+<td>/Z</td>
+<td>用重新启动模式复制网络文件。</td>
+</tr>
+<tr>
+<td></td>
+<td>命令行开关 /Y 可以预先在 COPYCMD 环境变量中设置。 　　这可能被命令行上的 /-Y 改写。</td>
+</tr>
+<tr>
+<td></td>
+<td>/B 复制符号链接本身与链接目标相对。</td>
+</tr>
+<tr>
+<td></td>
+<td>/J 复制时不使用缓冲的 I/O。推荐复制大文件时使用。</td>
+</tr>
+</tbody></table>
+<p>时间</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">set &quot;year=%date:~0,4%&quot;</span><br><span class="line">set &quot;month=%date:~5,2%&quot;</span><br><span class="line">set &quot;day=%date:~8,2%&quot;</span><br><span class="line">set &quot;hour_ten=%time:~0,1%&quot;</span><br><span class="line">set &quot;hour_one=%time:~1,1%&quot;</span><br><span class="line">set &quot;minute=%time:~3,2%&quot;</span><br><span class="line">set &quot;second=%time:~6,2%&quot;</span><br></pre></td></tr></table></figure>
+
+<p>参考：<a href="https://blog.csdn.net/qq_36838191/article/details/83046599" target="_blank" rel="noopener">https://blog.csdn.net/qq_36838191/article/details/83046599</a></p>
+
+        </div>
+        
+<blockquote class="post-copyright">
+    <div class="content">
+        
+<span class="post-time">
+    最后更新时间：<time datetime="2019-07-29T09:46:56.559Z" itemprop="dateUpdated">2019-07-29 17:46:56</time>
+</span><br>
+
+
+        
+        转载注明出处，原文地址：<a href="/2019/07/26/bat批处理命令说明/" target="_blank" rel="external">http://yoursite.com/2019/07/26/bat批处理命令说明/</a>
+        
+    </div>
+    <footer>
+        <a href="http://yoursite.com">
+            <img src="/img/avatar.jpg" alt="lbin">
+            lbin
+        </a>
+    </footer>
+</blockquote>
+
+        
+        <div class="post-footer">
+            
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/bat/">bat</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/批处理/">批处理</a></li></ul>
+
+            <div class="page-share-wrap">
+    
+
+<div class="page-share" id="pageShare">
+    <ul class="reset share-icons">
+      
+    </ul>
+ </div>
+
+
+
+    <a href="javascript:;" id="shareFab" class="page-share-fab waves-effect waves-circle">
+        <i class="icon icon-share-alt icon-lg"></i>
+    </a>
+</div>
+
+        </div>
+        
+    </div>
+    
+<nav class="post-nav flex-row flex-justify-between">
+  
+    <div class="prev">
+      <a href="/2019/07/26/自动执行样版bat/" id="post-prev" class="post-nav-link">
+        <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
+        <h4 class="title">自动执行样版bat</h4>
+      </a>
+    </div>
+  
+
+  
+</nav>
+
+
+    
+    
+        <aside class="post-widget">
+            <nav class="post-toc-wrap" id="post-toc">
+                <strong>目录</strong>
+                <ol class="post-toc"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#格式"><span class="post-toc-number">1.</span> <span class="post-toc-text">格式</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#文件处理"><span class="post-toc-number">2.</span> <span class="post-toc-text">文件处理</span></a></li></ol>
+            </nav>
+            <div class="toc-bar"><div>
+        </aside>
+    
+</article>
+
+
+</div>
+
+    </main>
+    <footer class="footer ">
+    
+    <div class="bottom">
+        <p>
+            <span>
+                lbin &copy; 2019 - 2020
+            </span>
+        		
+           	
+            
+            
+            <span>
+	            Power by <a href="http://hexo.io/" target="_blank">Hexo</a> Theme <a href="https://github.com/codefine/hexo-theme-mellow" target="_blank">mellow</a>
+            </span>
+            
+            
+            
+
+            
+                
+<span class="site-uv" title="总访客量">
+    <i class="icon icon-user"></i>
+    <i class="busuanzi-value" id="busuanzi_value_site_uv"></i>
+</span>
+
+
+<span class="site-pv" title="总访问量">
+    <i class="icon icon-eye"></i>
+    <i class="busuanzi-value" id="busuanzi_value_site_pv"></i>
+</span>
+
+            
+        </p>
+    </div>
+</footer>
+
+    <div class="mask" id="mask"></div>
+<a href="javascript:;" id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
+
+
+
+<div class="global-share" id="globalShare">
+    <ul class="reset share-icons">
+      
+    </ul>
+ </div>
+
+
+<div class="page-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMYAAADGCAAAAACs8KCBAAACKUlEQVR42u3ay45CIRCEYd//pXFroodT1YUa6J+VmRmBbxYd+vJ4yGu8rNefvH9+//v5d+enLF4wYMDYljGma37A/MirHeY/V3774VwYMGA0YCiXUILjzWFm+FbuBgMGDBgJSQm787AOAwYMGAlDv4SSmv4t4MKAAWMrhl4gS1JZt9z2lVwcBgwYGzL0qvvvP3+lvwEDBoytGMNc+j56UjriBQMGjLMZeoCbk/RwuSrgwoABow+jVlDTy/3J/krLIaoLwoABY0OGO0JRGx2rFdpuynYwYMA4mlHbaO3zzn2GwoABoyfDbQrqx7vjYnoafJmLw4AB4zhGnpTWRrjc5Dbqr8KAAWNzRhJY59dKLqTDpJ1hwICxOSNpXrqB2E1rjXNhwIBxNEN/kLkFemU3veUp3RMGDBiHMtyRCD0I1loI+ksWBgwY3RjJYIT77HMT42hmBAYMGA0YSQMgD68GGwYMGI0ZygG1BsDa78KAAeNshvtoSxJXPYjXBjhgwIDRgVFLQZOxsFoD9fJEGDBgtGEYww1yGNWbCtGDEgYMGA0YbuPQfczVSnhGcIcBA8ahjGEuJbDqYdRtDMCAAaMnQ192W9F8dLphvYiBAQPGtoxaid8d1ND/l26bAQYMGH0YefMyefy5wxYwYMCAsWwAIriW3fiEAQMGDLkxqRfL3OblDQkGDBgNGHozwG1krnoCGsMWMGDAOI7hbpqMea0aDov6GzBgwNiJ8QRkhJNhurwfaQAAAABJRU5ErkJggg==" alt="微信分享二维码">
+</div>
+
+
+    
+    <!-- main-js -->
+<script type="text/javascript" src="//cdn.bootcss.com/jquery/2.1.0/jquery.min.js"></script>
+<script type="text/javascript" src="/js/plugins/fastclick.js?v=1.4.3"></script>
+<script type="text/javascript" src="/js/plugins/ios-orientationchange-fix.js?v=1.4.3"></script>
+<script type="text/javascript" src="//cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.2/dist/jquery.fancybox.min.js"></script>
+
+<script type="text/javascript" src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
+
+<script type="text/javascript" src="/js/method.js?v=1.4.3"></script>
+<script type="text/javascript" src="/js/blog.js?v=1.4.3"></script>
+
+<!-- third-party -->
+
+
+
+
+
+
+<script type="text/javascript" src="/js/plugins/local_search.js?v=1.4.3"></script>
+<script type="text/javascript">
+	var search_path = "search.xml";
+	if (search_path.length === 0) {
+		search_path = "search.xml";
+	}
+	var path = "/" + search_path;
+	searchFunc(path, "local-search-input", "local-search-result");
+</script>
+
+
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+    
+    
+
+
+
+
+
+    <!-- mathjax config similar to math.stackexchange -->
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+            processEscapes: true,
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+        }
+    });
+</script>
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for (i=0; i < all.length; i += 1) {
+            all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+    });
+</script>
+
+<script type="text/javascript" src="//cdn.bootcss.com/mathjax/2.7.1/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+
+
+
+    <script>
+    (function() {
+        var OriginTitile = document.title, titleTime;
+        document.addEventListener('visibilitychange', function() {
+            if (document.hidden) {
+                document.title = '这里永远是你的灯塔';
+                clearTimeout(titleTime);
+            } else {
+                document.title = '欢迎回来';
+                titleTime = setTimeout(function() {
+                    document.title = OriginTitile;
+                },2000);
+            }
+        });
+    })();
+</script>
+
+
+
+
+
+    
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"jsonPath":"/live2dw/assets/miku.model.json"},"display":{"position":"left","width":150,"height":300},"mobile":{"show":true},"react":{"opacity":0.7},"log":false});</script></body>
+</html>

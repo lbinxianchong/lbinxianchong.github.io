@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.9.0">
+    <meta charset="utf-8">
+    
+    
+    <title>自动执行样版bat | lbin@Refuge</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="keywords" content="bat,批处理">
+    <link rel="shortcut icon" href="/img/favicon.ico">
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.2/dist/jquery.fancybox.min.css">
+    <link rel="stylesheet" href="/css/style.css?v=1.4.3">
+    
+    <script type="text/javascript">
+        // Data Center
+        var DC = {
+            reward:	false,
+            lv: JSON.parse('{"enable":false,"app_id":null,"app_key":null,"icon":true}'),
+            v: JSON.parse('{"enable":false,"appid":null,"appkey":null,"notify":true,"verify":true,"placeholder":"give me some sugers plz...","avatar":"wavatar"}'),
+            g: JSON.parse('{"enable":false,"lazy":true,"owner":"codefine","repo":"gitment","oauth":{"client_id":null,"client_secret":null},"perPage":10}'),
+            d: JSON.parse('{"app_id":null}')
+        };
+    </script>
+    <script type="text/javascript">
+        window.lazyScripts=[];
+    </script>
+    
+</head>
+
+
+<body>
+    <div id="loading" class="active"></div>
+
+    <aside id="menu" class="">
+  <div class="inner flex-row-vertical">
+    <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
+        <i class="icon icon-lg icon-close"></i>
+    </a>
+    <div class="brand-wrap">
+      
+      <img src="/img/brand.jpg" class="brand-bg">
+      
+      <div class="brand">
+        <a href="/" class="avatar waves-effect waves-circle waves-light">
+          <img src="/img/avatar.jpg">
+        </a>
+        <hgroup class="introduce">
+          <h5 class="nickname">lbin</h5>
+          <a href="mailto:不存在的" title="不存在的" class="mail">
+            
+              <span>不</span>
+            
+              <span>存</span>
+            
+              <span>在</span>
+            
+              <span>的</span>
+            
+          </a>
+        </hgroup>
+        
+        <ul class="menu-link">
+          
+              <li>
+                <a href="https://github.com/codefine" target="_blank">
+                  <i class="icon icon-lg icon-github"></i>
+                </a>
+              </li>
+            
+        </ul>
+        
+      </div>
+    </div>
+    <div class="scroll-wrap flex-col">
+      <ul class="nav">
+        
+            <li class="">
+              <a href="/"  >
+                <i class="icon icon-lg icon-home"></i>
+                主页
+              </a>
+            </li>
+        
+            <li class="">
+              <a href="/categories"  >
+                <i class="icon icon-lg icon-th-list"></i>
+                分类
+              </a>
+            </li>
+        
+            <li class="">
+              <a href="/tags"  >
+                <i class="icon icon-lg icon-tags"></i>
+                标签
+              </a>
+            </li>
+        
+            <li class="">
+              <a href="/archives"  >
+                <i class="icon icon-lg icon-archives"></i>
+                归档
+              </a>
+            </li>
+        
+            <li class="">
+              <a href="/custom"  >
+                <i class="icon icon-lg icon-plus-square"></i>
+                待开发
+              </a>
+            </li>
+        
+      </ul>
+    </div>
+  </div>
+</aside>
+
+    <main id="main">
+        <header class="top-header" id="header">
+    <div class="flex-row clearfix">
+        <a href="javascript:;" class="header-icon pull-left waves-effect waves-circle waves-light on" id="menu-toggle">
+          <i class="icon icon-lg icon-navicon"></i>
+        </a>
+        <div class="flex-col header-title ellipsis">
+            <span>自动执行样版bat</span>
+            
+        </div>
+        
+        <a href="javascript:;" id="site_search_btn" class="header-icon pull-right waves-effect waves-circle waves-light">
+            <i class="icon icon-lg icon-search"></i>
+        </a>
+        
+    </div>
+</header>
+<header class="content-header post-header">
+    <img src="/img/banner.jpg" class="header-bg">
+    <div class="container fade-scale">
+        <h1 class="title">自动执行样版bat</h1>
+        <h5 class="subtitle">
+            
+                <time datetime="2019-07-26T08:13:06.000Z" itemprop="datePublished" class="page-time">
+  2019-07-26
+</time>
+
+
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/技术/">技术</a><ul class="article-category-list-child"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/技术/批处理/">批处理</a></li></ul></li></ul>
+
+            
+        </h5>
+        
+    </div>
+    
+
+</header>
+
+<div id="site_search">
+    <div class="search-title clearfix">
+        <span class="pull-left">
+          <i class="icon icon-lg icon-search"></i>
+        </span>
+        <input type="text" id="local-search-input" name="q" results="0" placeholder="search my blog..." class="form-control pull-left"/>
+        <a href="javascript:;" class="close pull-right waves-effect waves-circle waves-light">
+          <i class="icon icon-lg icon-close"></i>
+        </a>
+    </div>
+    <div id="local-search-result"></div>
+</div>
+
+
+<div class="container body-wrap">
+    <article id="post-自动执行样版bat"
+  class="post-article article-type-post" itemprop="blogPost">
+    <div class="post-card">
+        <h1 class="post-card-title">自动执行样版bat</h1>
+        <div class="post-meta">
+            <time class="post-time" title="2019-07-26 16:13:06" datetime="2019-07-26T08:13:06.000Z"  itemprop="datePublished">2019-07-26</time>
+
+            
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/技术/">技术</a><ul class="article-category-list-child"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/技术/批处理/">批处理</a></li></ul></li></ul>
+
+
+
+            
+
+            
+
+
+            
+        </div>
+        <div class="post-content" id="post-content" itemprop="postContent">
+            
+            <p>打开执行</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">@echo off</span><br><span class="line">::路径设置</span><br><span class="line">set ideapath=D:\Program Files\JetBrains\IntelliJ IDEA 2017.3.2\bin\</span><br><span class="line">set vnotepath=D:\Program Files (x86)\VNote\</span><br><span class="line">::执行程序</span><br><span class="line">start /d &quot;%vnotepath%&quot; VNote.exe</span><br><span class="line">start /d &quot;%ideapath%&quot; idea64.exe</span><br><span class="line">echo 该脚本编码用的是GBK，及时更新</span><br><span class="line">pause</span><br></pre></td></tr></table></figure>
+
+<p>hexo编译</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">@echo off</span><br><span class="line">title 更新hexo-本地部署</span><br><span class="line">echo ###################hexoblog更新#################</span><br><span class="line">CMD /C hexo clean</span><br><span class="line">CMD /C hexo g</span><br><span class="line"></span><br><span class="line">echo 该脚本编码用的是GBK，及时更新</span><br><span class="line"></span><br><span class="line">pause</span><br></pre></td></tr></table></figure>
+
+<p>一键git更新github</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br></pre></td><td class="code"><pre><span class="line">@echo off</span><br><span class="line">title 更新git推送github</span><br><span class="line"></span><br><span class="line">echo 脚本开始于%date%%time%</span><br><span class="line"></span><br><span class="line">::路径设置</span><br><span class="line">set vnotepath=x:\xx\x</span><br><span class="line">set hexoblogpath=x:\xx\x</span><br><span class="line">set githubpath=x:\xx\x</span><br><span class="line"></span><br><span class="line">echo ###################vnote笔记更新#################</span><br><span class="line">::更新笔记 vnote-log master</span><br><span class="line">cd /d %vnotepath%</span><br><span class="line">echo %vnotepath%</span><br><span class="line">git add .</span><br><span class="line">git commit -m &quot;自动更新-%date%&quot;</span><br><span class="line">git push origin master:master</span><br><span class="line"></span><br><span class="line">echo ###################hexoblog更新#################</span><br><span class="line">::自动部署hexo博客 master分支</span><br><span class="line">cd /d %githubpath%</span><br><span class="line">echo %githubpath%</span><br><span class="line">CMD /C hexo clean</span><br><span class="line">CMD /C hexo g</span><br><span class="line">CMD /C hexo d</span><br><span class="line"></span><br><span class="line">echo ###################hexo源文件更新#################</span><br><span class="line">::自动更新hexo源文件 hexo分支</span><br><span class="line">cd /d %githubpath%</span><br><span class="line">echo %githubpath%</span><br><span class="line">rmdir /q /s  %githubpath%\.deploy_git</span><br><span class="line"></span><br><span class="line">git add .</span><br><span class="line">git commit -m &quot;自动更新-%date%&quot;</span><br><span class="line">git push origin hexo:hexo</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">echo 该脚本编码用的是GBK，及时更新</span><br><span class="line"></span><br><span class="line">echo 脚本结束于%date%%time%</span><br><span class="line">pause</span><br></pre></td></tr></table></figure>
+
+
+        </div>
+        
+<blockquote class="post-copyright">
+    <div class="content">
+        
+<span class="post-time">
+    最后更新时间：<time datetime="2019-07-29T09:47:11.623Z" itemprop="dateUpdated">2019-07-29 17:47:11</time>
+</span><br>
+
+
+        
+        转载注明出处，原文地址：<a href="/2019/07/26/自动执行样版bat/" target="_blank" rel="external">http://yoursite.com/2019/07/26/自动执行样版bat/</a>
+        
+    </div>
+    <footer>
+        <a href="http://yoursite.com">
+            <img src="/img/avatar.jpg" alt="lbin">
+            lbin
+        </a>
+    </footer>
+</blockquote>
+
+        
+        <div class="post-footer">
+            
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/bat/">bat</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/批处理/">批处理</a></li></ul>
+
+            <div class="page-share-wrap">
+    
+
+<div class="page-share" id="pageShare">
+    <ul class="reset share-icons">
+      
+    </ul>
+ </div>
+
+
+
+    <a href="javascript:;" id="shareFab" class="page-share-fab waves-effect waves-circle">
+        <i class="icon icon-share-alt icon-lg"></i>
+    </a>
+</div>
+
+        </div>
+        
+    </div>
+    
+<nav class="post-nav flex-row flex-justify-between">
+  
+    <div class="prev">
+      <a href="/2019/08/12/tomcat文件服务器/" id="post-prev" class="post-nav-link">
+        <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
+        <h4 class="title">tomcat文件服务器</h4>
+      </a>
+    </div>
+  
+
+  
+    <div class="next">
+      <a href="/2019/07/26/bat批处理命令说明/" id="post-next" class="post-nav-link">
+        <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
+        <h4 class="title">bat批处理命令说明</h4>
+      </a>
+    </div>
+  
+</nav>
+
+
+    
+    
+</article>
+
+
+</div>
+
+    </main>
+    <footer class="footer ">
+    
+    <div class="bottom">
+        <p>
+            <span>
+                lbin &copy; 2019 - 2020
+            </span>
+        		
+           	
+            
+            
+            <span>
+	            Power by <a href="http://hexo.io/" target="_blank">Hexo</a> Theme <a href="https://github.com/codefine/hexo-theme-mellow" target="_blank">mellow</a>
+            </span>
+            
+            
+            
+
+            
+                
+<span class="site-uv" title="总访客量">
+    <i class="icon icon-user"></i>
+    <i class="busuanzi-value" id="busuanzi_value_site_uv"></i>
+</span>
+
+
+<span class="site-pv" title="总访问量">
+    <i class="icon icon-eye"></i>
+    <i class="busuanzi-value" id="busuanzi_value_site_pv"></i>
+</span>
+
+            
+        </p>
+    </div>
+</footer>
+
+    <div class="mask" id="mask"></div>
+<a href="javascript:;" id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
+
+
+
+<div class="global-share" id="globalShare">
+    <ul class="reset share-icons">
+      
+    </ul>
+ </div>
+
+
+<div class="page-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMYAAADGCAAAAACs8KCBAAACNUlEQVR42u3awW6EMAxFUf7/p6nU3agN3GeD2iQ3qxEzBR8WrmPnOPA6v1f6mfzy51NG3z6wZMiQMS3jvFyjB19fIfcZBX19nyFVhgwZGzBIkh2FdZ0ieejk9Q2vy5AhQwZIvgRJUqcMGTJk9BNuinmqlJQhQ4YMsoklizTR+glahgwZuzHeGwz0P/+L+YYMGTL+lHGGi5d6tWcVo5IhQ8bSjDSg9NbpAQteLB5kXytDhozlGOkteFidopCnexkyZKzKSI9NpEm59hTevPuocGXIkLEoo9ZQ65SG/UHmzYuQIUPGcox0KEgSZQfAj2V8fJYhQ8bSDF6K8eSbFoj8KMbNa5UhQ8bGjPR4Vu2XpN0WFIgyZMhYjlHb0PJGW4fUSccyZMhYiUGaXOlctAOojR9kyJCxA4O0yfpbzX6D76bdJkOGjOUYaaMtDeLZA2GPjQRkyJAxIaNTCNYS6LOtNxkyZOzJ4I14PrysjS0f6A7KkCFjcgbfKNZSZNqS46OIX67LkCFjUUbxABYImr+O/mhBhgwZOzDIhpOXbmmZ2L8uQ4aMtRk8maYJlxyS4GUlikGGDBmLMs5wdZpx/aQ8/FaGDBlLM/hKQ6wlUD6uiAEyZMiYnMGTbCeg18tHGTJkbMBI2/pk8EkSLv8PEO/FZciQsSUj3WSmhzPSjfSLlaYMGTImZ3RGBejwRO1vZciQsQEjHQbwpJyWjwTZarfJkCFjQkZtA1krBDvjz9r4QYYMGZMzvgAUnzf1EEi8HAAAAABJRU5ErkJggg==" alt="微信分享二维码">
+</div>
+
+
+    
+    <!-- main-js -->
+<script type="text/javascript" src="//cdn.bootcss.com/jquery/2.1.0/jquery.min.js"></script>
+<script type="text/javascript" src="/js/plugins/fastclick.js?v=1.4.3"></script>
+<script type="text/javascript" src="/js/plugins/ios-orientationchange-fix.js?v=1.4.3"></script>
+<script type="text/javascript" src="//cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.2/dist/jquery.fancybox.min.js"></script>
+
+<script type="text/javascript" src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
+
+<script type="text/javascript" src="/js/method.js?v=1.4.3"></script>
+<script type="text/javascript" src="/js/blog.js?v=1.4.3"></script>
+
+<!-- third-party -->
+
+
+
+
+
+
+<script type="text/javascript" src="/js/plugins/local_search.js?v=1.4.3"></script>
+<script type="text/javascript">
+	var search_path = "search.xml";
+	if (search_path.length === 0) {
+		search_path = "search.xml";
+	}
+	var path = "/" + search_path;
+	searchFunc(path, "local-search-input", "local-search-result");
+</script>
+
+
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+    
+    
+
+
+
+
+
+    <!-- mathjax config similar to math.stackexchange -->
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+            processEscapes: true,
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+        }
+    });
+</script>
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for (i=0; i < all.length; i += 1) {
+            all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+    });
+</script>
+
+<script type="text/javascript" src="//cdn.bootcss.com/mathjax/2.7.1/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+
+
+
+    <script>
+    (function() {
+        var OriginTitile = document.title, titleTime;
+        document.addEventListener('visibilitychange', function() {
+            if (document.hidden) {
+                document.title = '这里永远是你的灯塔';
+                clearTimeout(titleTime);
+            } else {
+                document.title = '欢迎回来';
+                titleTime = setTimeout(function() {
+                    document.title = OriginTitile;
+                },2000);
+            }
+        });
+    })();
+</script>
+
+
+
+
+
+    
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"jsonPath":"/live2dw/assets/miku.model.json"},"display":{"position":"left","width":150,"height":300},"mobile":{"show":true},"react":{"opacity":0.7},"log":false});</script></body>
+</html>

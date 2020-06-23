@@ -1,0 +1,448 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.9.0">
+    <meta charset="utf-8">
+    
+    
+    <title>tomcat文件服务器 | lbin@Refuge</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="keywords" content="tomcat,文件服务器">
+    <link rel="shortcut icon" href="/img/favicon.ico">
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.2/dist/jquery.fancybox.min.css">
+    <link rel="stylesheet" href="/css/style.css?v=1.4.3">
+    
+    <script type="text/javascript">
+        // Data Center
+        var DC = {
+            reward:	false,
+            lv: JSON.parse('{"enable":false,"app_id":null,"app_key":null,"icon":true}'),
+            v: JSON.parse('{"enable":false,"appid":null,"appkey":null,"notify":true,"verify":true,"placeholder":"give me some sugers plz...","avatar":"wavatar"}'),
+            g: JSON.parse('{"enable":false,"lazy":true,"owner":"codefine","repo":"gitment","oauth":{"client_id":null,"client_secret":null},"perPage":10}'),
+            d: JSON.parse('{"app_id":null}')
+        };
+    </script>
+    <script type="text/javascript">
+        window.lazyScripts=[];
+    </script>
+    
+</head>
+
+
+<body>
+    <div id="loading" class="active"></div>
+
+    <aside id="menu" class="">
+  <div class="inner flex-row-vertical">
+    <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
+        <i class="icon icon-lg icon-close"></i>
+    </a>
+    <div class="brand-wrap">
+      
+      <img src="/img/brand.jpg" class="brand-bg">
+      
+      <div class="brand">
+        <a href="/" class="avatar waves-effect waves-circle waves-light">
+          <img src="/img/avatar.jpg">
+        </a>
+        <hgroup class="introduce">
+          <h5 class="nickname">lbin</h5>
+          <a href="mailto:不存在的" title="不存在的" class="mail">
+            
+              <span>不</span>
+            
+              <span>存</span>
+            
+              <span>在</span>
+            
+              <span>的</span>
+            
+          </a>
+        </hgroup>
+        
+        <ul class="menu-link">
+          
+              <li>
+                <a href="https://github.com/codefine" target="_blank">
+                  <i class="icon icon-lg icon-github"></i>
+                </a>
+              </li>
+            
+        </ul>
+        
+      </div>
+    </div>
+    <div class="scroll-wrap flex-col">
+      <ul class="nav">
+        
+            <li class="">
+              <a href="/"  >
+                <i class="icon icon-lg icon-home"></i>
+                主页
+              </a>
+            </li>
+        
+            <li class="">
+              <a href="/categories"  >
+                <i class="icon icon-lg icon-th-list"></i>
+                分类
+              </a>
+            </li>
+        
+            <li class="">
+              <a href="/tags"  >
+                <i class="icon icon-lg icon-tags"></i>
+                标签
+              </a>
+            </li>
+        
+            <li class="">
+              <a href="/archives"  >
+                <i class="icon icon-lg icon-archives"></i>
+                归档
+              </a>
+            </li>
+        
+            <li class="">
+              <a href="/custom"  >
+                <i class="icon icon-lg icon-plus-square"></i>
+                待开发
+              </a>
+            </li>
+        
+      </ul>
+    </div>
+  </div>
+</aside>
+
+    <main id="main">
+        <header class="top-header" id="header">
+    <div class="flex-row clearfix">
+        <a href="javascript:;" class="header-icon pull-left waves-effect waves-circle waves-light on" id="menu-toggle">
+          <i class="icon icon-lg icon-navicon"></i>
+        </a>
+        <div class="flex-col header-title ellipsis">
+            <span>tomcat文件服务器</span>
+            
+        </div>
+        
+        <a href="javascript:;" id="site_search_btn" class="header-icon pull-right waves-effect waves-circle waves-light">
+            <i class="icon icon-lg icon-search"></i>
+        </a>
+        
+    </div>
+</header>
+<header class="content-header post-header">
+    <img src="/img/banner.jpg" class="header-bg">
+    <div class="container fade-scale">
+        <h1 class="title">tomcat文件服务器</h1>
+        <h5 class="subtitle">
+            
+                <time datetime="2019-08-12T09:40:29.000Z" itemprop="datePublished" class="page-time">
+  2019-08-12
+</time>
+
+
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/技术/">技术</a><ul class="article-category-list-child"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/技术/tomcat/">tomcat</a></li></ul></li></ul>
+
+            
+        </h5>
+        
+    </div>
+    
+
+</header>
+
+<div id="site_search">
+    <div class="search-title clearfix">
+        <span class="pull-left">
+          <i class="icon icon-lg icon-search"></i>
+        </span>
+        <input type="text" id="local-search-input" name="q" results="0" placeholder="search my blog..." class="form-control pull-left"/>
+        <a href="javascript:;" class="close pull-right waves-effect waves-circle waves-light">
+          <i class="icon icon-lg icon-close"></i>
+        </a>
+    </div>
+    <div id="local-search-result"></div>
+</div>
+
+
+<div class="container body-wrap">
+    <article id="post-tomcat文件服务器"
+  class="post-article article-type-post" itemprop="blogPost">
+    <div class="post-card">
+        <h1 class="post-card-title">tomcat文件服务器</h1>
+        <div class="post-meta">
+            <time class="post-time" title="2019-08-12 17:40:29" datetime="2019-08-12T09:40:29.000Z"  itemprop="datePublished">2019-08-12</time>
+
+            
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/技术/">技术</a><ul class="article-category-list-child"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/技术/tomcat/">tomcat</a></li></ul></li></ul>
+
+
+
+            
+
+            
+
+
+            
+        </div>
+        <div class="post-content" id="post-content" itemprop="postContent">
+            
+            <p>由于tomcat部署与idea部署分为单独的服务器，分为2种情况部署</p>
+<h3 id="第一种：项目在idea的tomcat部署"><a href="#第一种：项目在idea的tomcat部署" class="headerlink" title="第一种：项目在idea的tomcat部署"></a>第一种：项目在idea的tomcat部署</h3><figure class="image-box">
+                <a rel=tomcat文件服务器 href="/img/tomcat文件服务器.assets/1565602055313.png" title="1565602055313" data-fancybox="images"><img src="/img/tomcat文件服务器.assets/1565602055313.png" alt="1565602055313" title class></a>
+                <p>1565602055313</p>
+            </figure>
+
+<figure class="image-box">
+                <a rel=tomcat文件服务器 href="/img/tomcat文件服务器.assets/1565602117231.png" title="1565602117231" data-fancybox="images"><img src="/img/tomcat文件服务器.assets/1565602117231.png" alt="1565602117231" title class></a>
+                <p>1565602117231</p>
+            </figure>
+
+<figure class="image-box">
+                <a rel=tomcat文件服务器 href="/img/tomcat文件服务器.assets/1565602192580.png" title="1565602192580" data-fancybox="images"><img src="/img/tomcat文件服务器.assets/1565602192580.png" alt="1565602192580" title class></a>
+                <p>1565602192580</p>
+            </figure>
+
+<p>访问：<a href="http://127.0.0.1:8080/docsave" target="_blank" rel="noopener">http://127.0.0.1:8080/docsave</a></p>
+<h3 id="第2种：tomcat文件服务器"><a href="#第2种：tomcat文件服务器" class="headerlink" title="第2种：tomcat文件服务器"></a>第2种：tomcat文件服务器</h3><p>tomcat作为项目服务器时因为权限问题，只能访问Tomcat文件夹下的资源（例如：WEB-INF）。</p>
+<p>在tomcat根目录/conf/server.xml中加入如下配置，即可访问指定的文件。</p>
+<p>Tomcat 7.0\conf\server.xml 找到Host标签加入如下内容：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;Context path=&quot;/asset/docsave&quot; docBase=&quot;D:\docsave&quot;/&gt;</span><br></pre></td></tr></table></figure>
+
+<p>或者</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;Context path=&quot;/img&quot; docBase=&quot;D:\docsave&quot;/&gt;</span><br></pre></td></tr></table></figure>
+
+<p>访问：<a href="http://127.0.0.1:8080/img" target="_blank" rel="noopener">http://127.0.0.1:8080/img</a></p>
+
+        </div>
+        
+<blockquote class="post-copyright">
+    <div class="content">
+        
+<span class="post-time">
+    最后更新时间：<time datetime="2019-08-13T01:29:12.677Z" itemprop="dateUpdated">2019-08-13 09:29:12</time>
+</span><br>
+
+
+        
+        转载注明出处，原文地址：<a href="/2019/08/12/tomcat文件服务器/" target="_blank" rel="external">http://yoursite.com/2019/08/12/tomcat文件服务器/</a>
+        
+    </div>
+    <footer>
+        <a href="http://yoursite.com">
+            <img src="/img/avatar.jpg" alt="lbin">
+            lbin
+        </a>
+    </footer>
+</blockquote>
+
+        
+        <div class="post-footer">
+            
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/tomcat/">tomcat</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/文件服务器/">文件服务器</a></li></ul>
+
+            <div class="page-share-wrap">
+    
+
+<div class="page-share" id="pageShare">
+    <ul class="reset share-icons">
+      
+    </ul>
+ </div>
+
+
+
+    <a href="javascript:;" id="shareFab" class="page-share-fab waves-effect waves-circle">
+        <i class="icon icon-share-alt icon-lg"></i>
+    </a>
+</div>
+
+        </div>
+        
+    </div>
+    
+<nav class="post-nav flex-row flex-justify-between">
+  
+    <div class="prev">
+      <a href="/2019/12/23/springboot静态资源映射/" id="post-prev" class="post-nav-link">
+        <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
+        <h4 class="title">springboot静态资源映射</h4>
+      </a>
+    </div>
+  
+
+  
+    <div class="next">
+      <a href="/2019/07/26/自动执行样版bat/" id="post-next" class="post-nav-link">
+        <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
+        <h4 class="title">自动执行样版bat</h4>
+      </a>
+    </div>
+  
+</nav>
+
+
+    
+    
+        <aside class="post-widget">
+            <nav class="post-toc-wrap" id="post-toc">
+                <strong>目录</strong>
+                <ol class="post-toc"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#第一种：项目在idea的tomcat部署"><span class="post-toc-number">1.</span> <span class="post-toc-text">第一种：项目在idea的tomcat部署</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#第2种：tomcat文件服务器"><span class="post-toc-number">2.</span> <span class="post-toc-text">第2种：tomcat文件服务器</span></a></li></ol>
+            </nav>
+            <div class="toc-bar"><div>
+        </aside>
+    
+</article>
+
+
+</div>
+
+    </main>
+    <footer class="footer ">
+    
+    <div class="bottom">
+        <p>
+            <span>
+                lbin &copy; 2019 - 2020
+            </span>
+        		
+           	
+            
+            
+            <span>
+	            Power by <a href="http://hexo.io/" target="_blank">Hexo</a> Theme <a href="https://github.com/codefine/hexo-theme-mellow" target="_blank">mellow</a>
+            </span>
+            
+            
+            
+
+            
+                
+<span class="site-uv" title="总访客量">
+    <i class="icon icon-user"></i>
+    <i class="busuanzi-value" id="busuanzi_value_site_uv"></i>
+</span>
+
+
+<span class="site-pv" title="总访问量">
+    <i class="icon icon-eye"></i>
+    <i class="busuanzi-value" id="busuanzi_value_site_pv"></i>
+</span>
+
+            
+        </p>
+    </div>
+</footer>
+
+    <div class="mask" id="mask"></div>
+<a href="javascript:;" id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
+
+
+
+<div class="global-share" id="globalShare">
+    <ul class="reset share-icons">
+      
+    </ul>
+ </div>
+
+
+<div class="page-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMYAAADGCAAAAACs8KCBAAACNElEQVR42u3aQW7DMAwFUd//0i7QVYvA7nxSTiNpvAoSN+XzgqFIHge+zu/r/vXPd17vIe+/3jP4kiFDxrQM8nX3X32F4e8MoMqQIWMDBk+yBNZ5TOTxyZAhQwZPiPfl4KiyUoYMGTLShEvKuNrx+K2/GzJkyJiQQUo3Eij5NC0TB5/FZciQMSFj1GDgidf/MN+QIUPGhzHO0pX+4/vyjqfXy3hkyJCxNKNz+OR574kW3kGeigwZMhZijG261Q63tST+YO9QhgwZH8bot9v4YPKe3VnpkCFDxqoMXsx1SGnqJDHIkCFjHwYJlIBrqxgk+fIYZMiQsSqjv1rBy0GSjklpKEOGjN0Ywcc4mfYDTR+TDBkydmCkB8h+SdcaUl7dKUOGjEUZvGXPe/K8TVZjBNttMmTIWILRb/3zJYm0nUdWPYqZXoYMGVMxeEAprLP+RcpQGTJk7MNIyzueWPnIk5SMg6tUGTJkTMWoNb/S0q2GJ3H+OovLkCFjUUba1k+PvnyckMYgQ4aM3Rjpn/Fwa2POB5OsDBkyFmKkza80FF4y8oGEDBky1mbwQ+zYFFlb8ij+esiQIWNaxhletQFk7WEF6VuGDBlLM2rrEenyRFDYhQMGGTJk7MOoJVl+lK09lLRUlSFDxg6M/lJFrVnWOb7KkCFDRtrir62CpUfZuHqVIUPGZgxSrt2H0ik9/8DIkCFjA0a67MWHlzys9DHJkCFjH0Z/MJAG0RmU1lY0ZMiQMS3jC6olk2H6rHcfAAAAAElFTkSuQmCC" alt="微信分享二维码">
+</div>
+
+
+    
+    <!-- main-js -->
+<script type="text/javascript" src="//cdn.bootcss.com/jquery/2.1.0/jquery.min.js"></script>
+<script type="text/javascript" src="/js/plugins/fastclick.js?v=1.4.3"></script>
+<script type="text/javascript" src="/js/plugins/ios-orientationchange-fix.js?v=1.4.3"></script>
+<script type="text/javascript" src="//cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.2/dist/jquery.fancybox.min.js"></script>
+
+<script type="text/javascript" src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
+
+<script type="text/javascript" src="/js/method.js?v=1.4.3"></script>
+<script type="text/javascript" src="/js/blog.js?v=1.4.3"></script>
+
+<!-- third-party -->
+
+
+
+
+
+
+<script type="text/javascript" src="/js/plugins/local_search.js?v=1.4.3"></script>
+<script type="text/javascript">
+	var search_path = "search.xml";
+	if (search_path.length === 0) {
+		search_path = "search.xml";
+	}
+	var path = "/" + search_path;
+	searchFunc(path, "local-search-input", "local-search-result");
+</script>
+
+
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+    
+    
+
+
+
+
+
+    <!-- mathjax config similar to math.stackexchange -->
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+            processEscapes: true,
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+        }
+    });
+</script>
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for (i=0; i < all.length; i += 1) {
+            all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+    });
+</script>
+
+<script type="text/javascript" src="//cdn.bootcss.com/mathjax/2.7.1/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+
+
+
+    <script>
+    (function() {
+        var OriginTitile = document.title, titleTime;
+        document.addEventListener('visibilitychange', function() {
+            if (document.hidden) {
+                document.title = '这里永远是你的灯塔';
+                clearTimeout(titleTime);
+            } else {
+                document.title = '欢迎回来';
+                titleTime = setTimeout(function() {
+                    document.title = OriginTitile;
+                },2000);
+            }
+        });
+    })();
+</script>
+
+
+
+
+
+    
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"jsonPath":"/live2dw/assets/miku.model.json"},"display":{"position":"left","width":150,"height":300},"mobile":{"show":true},"react":{"opacity":0.7},"log":false});</script></body>
+</html>
